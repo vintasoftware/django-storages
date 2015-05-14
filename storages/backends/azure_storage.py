@@ -74,4 +74,4 @@ class AzureStorage(Storage):
         return name
 
     def url(self, name):
-        return "{}{}/{}".format(setting('MEDIA_URL'), self.azure_container, name)
+        return u"{}/{}".format(setting('MEDIA_URL').rstrip('/'), name)
